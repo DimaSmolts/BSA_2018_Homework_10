@@ -7,7 +7,7 @@
       {{ fl.deperturePlace }} //
       {{ fl.arrivalPlace }} // 
       <button routerLink="/flights/{{fl.flightNum}}">Details</button>
-      <button>Delete</button>
+      <button (click)="DeleteFlight(fl.flightNum)">Delete</button>
       <button>Update</button>
      </li>
   </ul>

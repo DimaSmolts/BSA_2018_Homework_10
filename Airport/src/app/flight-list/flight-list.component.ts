@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Flight} from '../flight';
-import {Http} from '@angular/http';
+import {Http, Response} from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-flight-list',
@@ -9,11 +11,7 @@ import {Http} from '@angular/http';
 })
 export class FlightListComponent implements OnInit {
 
-  flights = [
-    // new Flight(1, 'Kyiv', new Date(1998, 5, 28), 'Vinnytsia', new Date(1998, 5, 28) ),
-    // new Flight(2, 'London', new Date(1998, 6, 28), 'Vinnytsia', new Date(1998, 6, 28) ),
-    // new Flight(3, 'Madrid', new Date(1998, 6, 28), 'Vinnytsia', new Date(1998, 6, 28) )
-  ];
+  flights = [ ];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/flight';
@@ -21,7 +19,6 @@ export class FlightListComponent implements OnInit {
     this.http.get(url)
     .subscribe( (response) => {
       console.log('good');
-      // debugger; // eslint-disable-line
       this.flights = response.json();
       console.log(this.flights);
     }, (response) => {
@@ -31,20 +28,15 @@ export class FlightListComponent implements OnInit {
 
   ngOnInit() { }
 
-  getFlightList() {
-     // return this.http.get(url)
-     // .pipe(map(data => {
-      //  const list = data['list'];
-      //  return list.map(function(flight: any) {
-     //     return {
-     //       FlightNum : flight.FlightNum,
-     //       DepaturePlace : flight.DepaturePlace,
-     //       DepartureTime : flight.DepartureTime,
-     //       ArrivalPlace : flight.ArrivalPlace,
-     //       ArrivalTime : flight.ArrivalTime
-     //     };
-     //   });
-     // }));
+  DeleteFlight(id: number) {
+    console.log(id);
+    const url = 'http://localhost:3111/api/flight/' + id;
+    console.log(url);
+    this.http.delete(url)
+    .subscribe( (response) => {
+      console.log('in');
+    }, (response) => {
+      console.log('out');
+    } );
   }
-
 }
