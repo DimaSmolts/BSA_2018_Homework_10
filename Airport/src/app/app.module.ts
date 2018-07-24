@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlightEntityComponent } from './flight-entity/flight-entity.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
+import {HttpModule, Http} from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { FlightListComponent } from './flight-list/flight-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

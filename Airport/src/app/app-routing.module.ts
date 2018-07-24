@@ -5,7 +5,8 @@ import { FlightListComponent } from './flight-list/flight-list.component';
 
 
 const routes: Routes = [
-  {path: 'flights', component: FlightListComponent}
+  {path: 'flights', component: FlightListComponent},
+  {path: 'flights/:id', component: FlightEntityComponent}
 ];
 
 @NgModule({
