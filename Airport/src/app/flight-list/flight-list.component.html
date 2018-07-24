@@ -1,0 +1,19 @@
+<div>
+  <h3>All Flights:</h3>
+  <p>Click Details for additional information</p>
+  <p>Click Delete to remove flight</p>
+  <p>Click Update to update flight</p>
+  <button>Add new Flight</button>
+  <ul *ngFor="let fl of flights">
+    <li>
+      {{fl.FlightNum}} // 
+      {{fl.DepaturePlace}} // <!--
+      {{fl.DepartureTime | date:'medium'}} // -->
+      {{fl.ArrivalPlace}} // <!--
+      {{fl.ArrivalTime | date:'medium'}} -->
+      <button>Details</button>
+      <button>Delete</button>
+      <button>Update</button>
+     </li>
+  </ul>
+</div>

@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FlightEntityComponent } from './flight-entity/flight-entity.component';
+import { FlightListComponent } from './flight-list/flight-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightEntityComponent,
+    FlightListComponent
   ],
   imports: [
     BrowserModule,
