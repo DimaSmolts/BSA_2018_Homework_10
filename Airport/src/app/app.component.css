@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    background: #004881;
+    margin: 0px; 
+    padding: 10px;
+    color: aliceblue;    
+}
+
+.buttons {
+    margin: 0;
+    display: flex;
+}
+
+.buttons button {
+    margin: 0;
+    border: 0;
+    flex: 1;
+    height: 50px;
+    background: #004881;
+    color: aliceblue;
+    font-size: 16px;
+    border-left: 1px solid #20679f;
+}
+
+.buttons button:hover {
+    text-decoration: underline;
+    background: rgba(0, 72, 129, 0.90);
+}
+
+.buttons button:active {
+    background: rgba(0, 72, 129, 0.85);
+}

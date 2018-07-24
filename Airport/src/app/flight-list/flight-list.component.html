@@ -1,16 +1,11 @@
 <div>
   <h3>All Flights:</h3>
-  <p>Click Details for additional information</p>
-  <p>Click Delete to remove flight</p>
-  <p>Click Update to update flight</p>
   <button>new Flight</button>
   <ul *ngFor="let fl of flights">
     <li>
       {{ fl.flightNum }} // 
-      {{ fl.deperturePlace }} // <!--
-      {{fl.DepartureTime | date:'medium'}} // -->
-      {{ fl.arrivalPlace }} // <!--
-      {{fl.ArrivalTime | date:'medium'}} -->
+      {{ fl.deperturePlace }} //
+      {{ fl.arrivalPlace }} // 
       <button routerLink="/flights/{{fl.flightNum}}">Details</button>
       <button>Delete</button>
       <button>Update</button>

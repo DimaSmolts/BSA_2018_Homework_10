@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Flight} from '../flight';
 import {Http} from '@angular/http';
 
-
 @Component({
   selector: 'app-flight-list',
   templateUrl: './flight-list.component.html',

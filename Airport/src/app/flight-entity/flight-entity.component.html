@@ -1,8 +1,11 @@
+<div>
+  <h3>Flight #{{flight.flightNum}} Information</h3>
+    <p>
+        {{ flight.flightNum }} // 
+        {{ flight.deperturePlace }} // 
+        {{ flight.departureTime | date:'medium'}} // 
+        {{ flight.arrivalPlace }} // 
+        {{ flight.arrivalTime | date:'medium'}} 
+    </p>
+</div>
 
-<p>
-    {{ flight.flightNum }} // 
-    {{ flight.deperturePlace }} // 
-    {{ flight.departureTime | date:'medium'}} // 
-    {{ flight.arrivalPlace }} // 
-    {{ flight.arrivalTime | date:'medium'}} 
-</p>
