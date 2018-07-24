@@ -7,6 +7,12 @@ body {
     margin: 0;
 }
 
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .title {
     text-align: center;
     background: #004881;
@@ -39,3 +45,4 @@ body {
 .buttons button:active {
     background: rgba(0, 72, 129, 0.85);
 }
+

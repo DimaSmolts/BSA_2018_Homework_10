@@ -1,18 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="title">
-    <h1>
-        Welcome to {{ title }}!
-    </h1>
-</div>    
-<div class="buttons">
-    <button [routerLink]="'flights'">Flights</button>
-    <button [routerLink]="''">Crews</button>
-    <button [routerLink]="''">Pilots</button>
-    <button [routerLink]="''">Stewardesses</button>
-    <button [routerLink]="''">Planes</button>
-    <button [routerLink]="''">Plane Types</button>
-    <button [routerLink]="''">Tickets</button>
-    <button [routerLink]="''">Take-Offs</button>
+<div class="wrapper">
+    <div class="title">
+        <h1>
+            Welcome to {{ title }}!
+        </h1>
+    </div>    
+    <div class="buttons">
+        <button [routerLink]="'flights'">Flights</button>
+       <button [routerLink]="''">Crews</button>
+        <button [routerLink]="''">Pilots</button>
+        <button [routerLink]="''">Stewardesses</button>
+        <button [routerLink]="''">Planes</button>
+        <button [routerLink]="''">Plane Types</button>
+        <button [routerLink]="''">Tickets</button>
+        <button [routerLink]="''">Take-Offs</button>
+    </div>
+    <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>

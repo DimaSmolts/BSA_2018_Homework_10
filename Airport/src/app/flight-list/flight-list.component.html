@@ -1,14 +1,24 @@
 <div>
   <h3>All Flights:</h3>
-  <button>new Flight</button>
-  <ul *ngFor="let fl of flights">
-    <li>
-      {{ fl.flightNum }} // 
-      {{ fl.deperturePlace }} //
-      {{ fl.arrivalPlace }} // 
-      <button routerLink="/flights/{{fl.flightNum}}">Details</button>
-      <button (click)="DeleteFlight(fl.flightNum)">Delete</button>
-      <button>Update</button>
-     </li>
-  </ul>
+  <button>new Flight</button>  
+  <table>
+    <thead>
+      <tr>      
+        <th>#</th>
+        <th>Departure</th>
+        <th>Arrival</th>
+        <th colspan="3">Additional functions</th>      
+      </tr>
+    </thead>
+    <tbody *ngFor="let fl of flights">
+      <tr>
+        <td>{{fl.flightNum}}</td>
+        <td>{{fl.deperturePlace}}</td>
+        <td>{{fl.arrivalPlace}}</td>
+        <td><button routerLink="/flights/{{fl.flightNum}}">Details</button></td>
+        <td><button>Update</button></td>
+        <td><button (click)="DeleteFlight(fl.flightNum)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
