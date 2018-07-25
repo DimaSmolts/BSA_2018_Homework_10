@@ -18,6 +18,8 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketEntityComponent } from './ticket-entity/ticket-entity.component';
 import { TakeOffListComponent } from './take-off-list/take-off-list.component';
 import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.component';
+import { CrewListComponent } from './crew-list/crew-list.component';
+import { CrewEntityComponent } from './crew-entity/crew-entity.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.compon
     TicketListComponent,
     TicketEntityComponent,
     TakeOffListComponent,
-    TakeOffEntityComponent
+    TakeOffEntityComponent,
+    CrewListComponent,
+    CrewEntityComponent
   ],
   imports: [
     BrowserModule,

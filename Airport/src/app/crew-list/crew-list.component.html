@@ -1,0 +1,20 @@
+<div>
+    <h3>All Crews:</h3>
+    <button>new Crew</button>  
+    <table>
+      <thead>
+        <tr>      
+          <th>#</th> 
+          <th colspan="3">Additional functions</th>               
+        </tr>
+      </thead>
+      <tbody *ngFor="let cr of crews">
+        <tr>
+          <td>Crew {{cr.id}}</td>          
+          <td><button routerLink="/crews/{{cr.id}}">Details</button></td>
+          <td><button>Update</button></td>
+          <td><button (click)="DeleteCrew(cr.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

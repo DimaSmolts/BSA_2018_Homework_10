@@ -1,0 +1,11 @@
+<div>
+    <h3>Crew #{{crew.id}} Information</h3>
+    <button routerLink="/crews" >Back</button>
+      <p>
+          {{crew.id}}
+      </p>
+      <p>{{crew.pilotId.name}} // {{crew.pilotId.surname}}</p>
+      <div *ngFor="let s of crew.stewardessIds">
+        <p>{{s.name}} // {{s.surname}}</p>
+      </div>
+  </div>
