@@ -1,0 +1,26 @@
+<div>
+  <h3>All Stewardesses:</h3>
+  <button>new Stewardess</button>  
+  <table>
+    <thead>
+      <tr>      
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birthday</th>        
+        <th colspan="3">Additional functions</th>      
+      </tr>
+    </thead>
+    <tbody *ngFor="let s of stewardesses">
+      <tr>
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.surname}}</td>
+        <td>{{s.birth | date}}</td>        
+        <td><button routerLink="/stewardesses/{{s.id}}">Details</button></td>
+        <td><button>Update</button></td>
+        <td><button (click)="DeleteStewardess(s.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

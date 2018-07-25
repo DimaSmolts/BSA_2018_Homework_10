@@ -10,6 +10,8 @@ import { PlaneTypeListComponent } from './plane-type-list/plane-type-list.compon
 import { PlaneTypeEntityComponent } from './plane-type-entity/plane-type-entity.component';
 import { PilotListComponent } from './pilot-list/pilot-list.component';
 import { PilotEntityComponent } from './pilot-entity/pilot-entity.component';
+import { StewardessListComponent } from './stewardess-list/stewardess-list.component';
+import { StewardessEntityComponent } from './stewardess-entity/stewardess-entity.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { PilotEntityComponent } from './pilot-entity/pilot-entity.component';
     PlaneTypeListComponent,
     PlaneTypeEntityComponent,
     PilotListComponent,
-    PilotEntityComponent
+    PilotEntityComponent,
+    StewardessListComponent,
+    StewardessEntityComponent
   ],
   imports: [
     BrowserModule,
