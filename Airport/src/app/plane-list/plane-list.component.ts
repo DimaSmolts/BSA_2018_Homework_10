@@ -11,7 +11,7 @@ import {Plane} from '../Plane';
 })
 export class PlaneListComponent implements OnInit {
 
-  planes = [];
+  planes: Plane[] = [];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/plane';

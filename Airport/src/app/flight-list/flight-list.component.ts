@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class FlightListComponent implements OnInit {
 
-  flights = [ ];
+  flights: Flight[] = [ ];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/flight';

@@ -11,7 +11,7 @@ import { Pilot } from '../Pilot';
 })
 export class PilotListComponent implements OnInit {
 
-  pilots = [];
+  pilots: Pilot[] = [];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/pilot';

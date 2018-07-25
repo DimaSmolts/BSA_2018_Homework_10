@@ -11,7 +11,7 @@ import { Stewardess } from '../Stewardess';
 })
 export class StewardessListComponent implements OnInit {
 
-  stewardesses = [];
+  stewardesses: Stewardess[] = [];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/stewardess';

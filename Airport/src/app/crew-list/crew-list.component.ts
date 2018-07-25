@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Crew } from '../Crew';
 
 @Component({
   selector: 'app-crew-list',
@@ -10,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class CrewListComponent implements OnInit {
 
-  crews = [];
+  crews: Crew[] = [];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/crew';

@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class PlaneTypeListComponent implements OnInit {
 
-  planeTypes = [ ];
+  planeTypes: PlaneType[] = [ ];
 
   constructor(private http: Http) {
     const url = 'http://localhost:3111/api/planetype';
