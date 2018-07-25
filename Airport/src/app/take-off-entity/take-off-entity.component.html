@@ -1,3 +1,20 @@
-<p>
-  take-off-entity works!
-</p>
+<div>
+    <h3>Take Off #{{takeoff.id}} Information</h3>
+    <button routerLink="/takeoffs" >Back</button>
+      <p>
+          {{ takeoff.id }} // 
+          {{ takeoff.date | date }} //           
+      </p>
+
+      <p style="margin-left: 40px">
+        Crew: {{takeoff.crewId.id}}
+      </p>
+
+      <p style="margin-left: 40px">
+          Flight: {{takeoff.flightNum.flightNum}}
+      </p>
+
+      <p style="margin-left: 40px">
+          Plane: {{takeoff.planeId.id}}
+      </p>
+  </div>

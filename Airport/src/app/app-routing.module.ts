@@ -12,6 +12,8 @@ import { PlaneListComponent } from './plane-list/plane-list.component';
 import { PlaneEntityComponent } from './plane-entity/plane-entity.component';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketEntityComponent } from './ticket-entity/ticket-entity.component';
+import { TakeOffListComponent } from './take-off-list/take-off-list.component';
+import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path: 'planes', component: PlaneListComponent},
   {path: 'planes/:id', component: PlaneEntityComponent},
   {path: 'tickets', component: TicketListComponent},
-  {path: 'tickets/:id', component: TicketEntityComponent}
+  {path: 'tickets/:id', component: TicketEntityComponent},
+  {path: 'takeoffs', component: TakeOffListComponent},
+  {path: 'takeoffs/:id', component: TakeOffEntityComponent}
 ];
 
 @NgModule({

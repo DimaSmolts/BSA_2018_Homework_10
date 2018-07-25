@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Http, Response} from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-take-off-list',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TakeOffListComponent implements OnInit {
 
-  constructor() { }
+  takeoffs = [];
+
+  constructor(private http: Http) {
+    const url = 'http://localhost:3111/api/takeoff';
+    this.takeoffs = [];
+    this.http.get(url)
+    .subscribe( (response) => {
+      console.log('good');
+      this.takeoffs = response.json();
+      console.log(this.takeoffs);
+    }, (response) => {
+      console.log('failed');
+    } );
+  }
 
   ngOnInit() {
+  }
+
+  DeleteTakeOff(id: number) {
+    console.log(id);
+    const url = 'http://localhost:3111/api/takeoff/' + id;
+    console.log(url);
+    this.http.delete(url)
+    .subscribe( (response) => {
+      console.log('in');
+    }, (response) => {
+      console.log('out');
+    } );
   }
 
 }
