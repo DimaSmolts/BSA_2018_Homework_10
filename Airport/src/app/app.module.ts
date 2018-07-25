@@ -8,6 +8,8 @@ import { FlightListComponent } from './flight-list/flight-list.component';
 import {HttpModule, Http} from '@angular/http';
 import { PlaneTypeListComponent } from './plane-type-list/plane-type-list.component';
 import { PlaneTypeEntityComponent } from './plane-type-entity/plane-type-entity.component';
+import { PilotListComponent } from './pilot-list/pilot-list.component';
+import { PilotEntityComponent } from './pilot-entity/pilot-entity.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { PlaneTypeEntityComponent } from './plane-type-entity/plane-type-entity.
     FlightEntityComponent,
     FlightListComponent,
     PlaneTypeListComponent,
-    PlaneTypeEntityComponent
+    PlaneTypeEntityComponent,
+    PilotListComponent,
+    PilotEntityComponent
   ],
   imports: [
     BrowserModule,

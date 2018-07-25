@@ -1,0 +1,28 @@
+<div>
+  <h3>All Pilots:</h3>
+  <button>new Pilot</button>  
+  <table>
+    <thead>
+      <tr>      
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birthday</th>
+        <th>Experience</th>
+        <th colspan="3">Additional functions</th>      
+      </tr>
+    </thead>
+    <tbody *ngFor="let p of pilots">
+      <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.surname}}</td>
+        <td>{{p.birth | date}}</td>
+        <td>{{p.experience}}</td>
+        <td><button routerLink="/pilots/{{p.id}}">Details</button></td>
+        <td><button>Update</button></td>
+        <td><button (click)="DeletePilot(p.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
