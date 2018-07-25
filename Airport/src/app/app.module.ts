@@ -12,6 +12,8 @@ import { PilotListComponent } from './pilot-list/pilot-list.component';
 import { PilotEntityComponent } from './pilot-entity/pilot-entity.component';
 import { StewardessListComponent } from './stewardess-list/stewardess-list.component';
 import { StewardessEntityComponent } from './stewardess-entity/stewardess-entity.component';
+import { PlaneListComponent } from './plane-list/plane-list.component';
+import { PlaneEntityComponent } from './plane-entity/plane-entity.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { StewardessEntityComponent } from './stewardess-entity/stewardess-entity
     PilotListComponent,
     PilotEntityComponent,
     StewardessListComponent,
-    StewardessEntityComponent
+    StewardessEntityComponent,
+    PlaneListComponent,
+    PlaneEntityComponent
   ],
   imports: [
     BrowserModule,

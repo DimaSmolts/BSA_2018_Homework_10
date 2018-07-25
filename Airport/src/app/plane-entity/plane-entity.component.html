@@ -1,0 +1,17 @@
+<div>
+  <h3>Plane #{{plane.id}} Information</h3>
+  <button routerLink="/planes" >Back</button>
+    <p>
+        {{ plane.id }} // 
+        {{ plane.name }} // 
+        {{ plane.made | date:'medium'}} // 
+        {{ plane.exploitation }}        
+    </p>
+    <p style="margin-left: 40px">Type:</p>
+    <p style="margin-left: 40px">
+      {{plane.type.id}} // 
+      {{plane.type.model}} // 
+      {{plane.type.places}} // 
+      {{plane.type.carryCapacity}}
+    </p>
+</div>
