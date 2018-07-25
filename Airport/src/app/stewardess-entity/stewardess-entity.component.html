@@ -1,10 +1,25 @@
 <div>
-  <h3>Stewardess #{{stew.id}} Information</h3>
+  <h1>Stewardess #{{stew.id}} Information</h1>
   <button routerLink="/stewardesses" >Back</button>
-    <p>
-        {{ stew.id }} // 
-        {{ stew.name }} // 
-        {{ stew.surname}} // 
-        {{ stew.birth }} 
-    </p>
+  <div class="details">
+        <img width="300" src="/assets/img/stew.jpg">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td>{{ stew.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ stew.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ stew.surname}}</td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>{{ stew.birth | date }}</td>
+            </tr>
+        </table>
+    </div>
 </div>
