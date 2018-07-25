@@ -1,0 +1,15 @@
+<div>
+  <h3>Ticket #{{ticket.id}} Information</h3>
+  <button routerLink="/tickets" >Back</button>
+    <p>
+        {{ ticket.id }} // 
+        {{ ticket.price }} // 
+    </p>
+    <p style="margin-left: 40px">
+      {{ticket.flightNum.flightNum}} // 
+      {{ticket.flightNum.deperturePlace}} // 
+      {{ticket.flightNum.departureTime}} // 
+      {{ticket.flightNum.arrivalPlace}} // 
+      {{ticket.flightNum.arrivalTime}} // 
+    </p>
+</div>

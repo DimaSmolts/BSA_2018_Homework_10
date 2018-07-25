@@ -14,6 +14,10 @@ import { StewardessListComponent } from './stewardess-list/stewardess-list.compo
 import { StewardessEntityComponent } from './stewardess-entity/stewardess-entity.component';
 import { PlaneListComponent } from './plane-list/plane-list.component';
 import { PlaneEntityComponent } from './plane-entity/plane-entity.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketEntityComponent } from './ticket-entity/ticket-entity.component';
+import { TakeOffListComponent } from './take-off-list/take-off-list.component';
+import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { PlaneEntityComponent } from './plane-entity/plane-entity.component';
     StewardessListComponent,
     StewardessEntityComponent,
     PlaneListComponent,
-    PlaneEntityComponent
+    PlaneEntityComponent,
+    TicketListComponent,
+    TicketEntityComponent,
+    TakeOffListComponent,
+    TakeOffEntityComponent
   ],
   imports: [
     BrowserModule,

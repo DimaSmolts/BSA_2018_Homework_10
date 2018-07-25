@@ -10,6 +10,8 @@ import { StewardessListComponent } from './stewardess-list/stewardess-list.compo
 import { StewardessEntityComponent } from './stewardess-entity/stewardess-entity.component';
 import { PlaneListComponent } from './plane-list/plane-list.component';
 import { PlaneEntityComponent } from './plane-entity/plane-entity.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketEntityComponent } from './ticket-entity/ticket-entity.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'stewardesses', component: StewardessListComponent},
   {path: 'stewardesses/:id', component: StewardessEntityComponent},
   {path: 'planes', component: PlaneListComponent},
-  {path: 'planes/:id', component: PlaneEntityComponent}
+  {path: 'planes/:id', component: PlaneEntityComponent},
+  {path: 'tickets', component: TicketListComponent},
+  {path: 'tickets/:id', component: TicketEntityComponent}
 ];
 
 @NgModule({
