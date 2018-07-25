@@ -1,0 +1,26 @@
+<div>
+  <h3>All Plane types:</h3>
+  <button>new Plane Type</button>  
+  <table>
+    <thead>
+      <tr>      
+        <th>#</th>
+        <th>Model</th>
+        <th>Places</th>
+        <th>Carry Capacity</th>
+        <th colspan="3">Additional functions</th>      
+      </tr>
+    </thead>
+    <tbody *ngFor="let pt of planeTypes">
+      <tr>
+        <td>{{pt.id}}</td>
+        <td>{{pt.model}}</td>
+        <td>{{pt.places}}</td>
+        <td>{{pt.carryCapacity}}</td>
+        <td><button routerLink="/planetypes/{{pt.id}}">Details</button></td>
+        <td><button>Update</button></td>
+        <td><button (click)="DeletePT(pt.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
