@@ -47,3 +47,8 @@ body {
     background: rgba(0, 72, 129, 0.85);
 }
 
+table thead tr{
+    border-bottom: 2px solid black;
+
+}
+
