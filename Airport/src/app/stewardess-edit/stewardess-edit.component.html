@@ -1,0 +1,17 @@
+<h1>Edit</h1>
+<button routerLink="/stewardesses">Back</button>
+<form [formGroup]="StewardessForm">
+    <div>
+        <label for="Name">Name</label>
+        <label for="Surname">Surname</label>
+        <label for="Birth">Birth</label>
+            
+    </div>
+    <div>
+        <input id="Name" type="text" formControlName="name" required>
+        <input id="Surname" type="text" formControlName="surname" required>
+        <input id="Birth" type="date" formControlName="birth" required>        
+    </div>  
+</form>
+<button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!StewardessForm.valid">Create</button>
+<button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!StewardessForm.valid">Update</button>

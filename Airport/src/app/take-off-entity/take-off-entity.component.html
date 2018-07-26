@@ -1,0 +1,29 @@
+<div>
+    <h1>Take Off #{{takeoff.id}} Information</h1>
+    <button routerLink="/takeoffs" >Back</button>
+    <div class="details">
+        <img width="300" src="/assets/img/take.png" >
+        <table>
+            <tr>
+                <th>ID</th>
+                <td>{{ takeoff.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ takeoff.date | date : 'medium' }}</td>
+            </tr>
+            <tr>
+                <th>Flight</th>
+                <td><a routerLink="/flights/{{takeoff.flightNum.flightNum}}">Watch Flight</a></td>
+            </tr>
+            <tr>
+                <th>Plane</th>
+                <td><a routerLink="/planes/{{takeoff.planeId.id}}">Watch Plane</a></td>
+            </tr>
+            <tr>
+                <th>Crew</th>
+                <td><a routerLink="/crews/{{takeoff.crewId.id}}">Watch Crew</a></td>
+            </tr>
+        </table>
+    </div>      
+  </div>

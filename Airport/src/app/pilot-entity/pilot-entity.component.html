@@ -1,0 +1,29 @@
+<div>
+    <h1>Pilot #{{pilot.id}} Information</h1>
+    <button routerLink="/pilots" >Back</button>
+    <div class="details">
+        <img width="300" src="/assets/img/pilot.jpg">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td>{{ pilot.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ pilot.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ pilot.surname}}</td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>{{ pilot.birth | date }}</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>{{ pilot.experience }}</td>
+            </tr>
+        </table>
+    </div>    
+</div>

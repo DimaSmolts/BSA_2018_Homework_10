@@ -1,0 +1,22 @@
+<div>
+    <h1>Crew #{{crew.id}} Information</h1>
+    <button routerLink="/crews" >Back</button>
+    <div class="details">
+      <img width="300" src="/assets/img/crew.png">
+
+      <table>
+        <tr>
+          <th>Id</th>
+          <td>{{crew.id}}</td>
+        </tr>
+        <tr>
+          <th>Pilot</th>
+          <td><a routerLink="/pilots/{{crew.pilotId.id}}">{{crew.pilotId.name}} {{crew.pilotId.surname}}</a></td>
+        </tr>
+        <tr *ngFor="let s of crew.stewardessIds">
+          <th>Stewardess</th>
+          <td><a routerLink="/stewardesses/{{s.id}}">{{s.name}} {{s.surname}}</a></td>
+        </tr>
+      </table>      
+    </div>
+  </div>

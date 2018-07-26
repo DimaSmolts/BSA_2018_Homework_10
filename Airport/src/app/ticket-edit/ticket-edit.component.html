@@ -1,0 +1,15 @@
+<h1>Edit</h1>
+<button routerLink="/tickets">Back</button>
+<form [formGroup]="TicketForm">
+  <div>
+      <label for="Departure_place">price</label>
+      <label for="Departure_time">Flight Number</label>      
+  </div>
+  <div>
+        <input id="Departure_place" type="number" formControlName="price" required>
+        <input id="Departure_place" type="number" formControlName="flightNum" required>      
+  </div>  
+</form>
+<button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!TicketForm.valid">Create</button>
+<button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!TicketForm.valid">Update</button>
+

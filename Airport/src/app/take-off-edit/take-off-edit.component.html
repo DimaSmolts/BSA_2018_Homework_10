@@ -1,0 +1,19 @@
+<h1>Edit</h1>
+<button routerLink="/takeoffs">Back</button>
+<form [formGroup]="TakeOffForm">
+
+    <div>
+            <label for="Flight">Flight ID</label>
+            <label for="Crew">Crew ID</label>
+            <label for="Plane">Plane ID</label>
+            <label for="Date">Date</label>
+    </div>
+    <div>
+            <input id="Flight" type="number" formControlName="flightNum" required>
+            <input id="Crew" type="number" formControlName="crewId" required>
+            <input id="Plane" type="number" formControlName="planeId" required>
+            <input id="Date" type="date" formControlName="date" required>
+    </div>  
+</form>
+<button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!TakeOffForm.valid">Create</button>
+<button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!TakeOffForm.valid">Update</button>

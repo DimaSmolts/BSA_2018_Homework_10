@@ -1,0 +1,31 @@
+<div>
+    <h1>Flight #{{flight.flightNum}} Information</h1>
+    <button routerLink="/flights" >Back</button>
+    <div class="details">
+        <img width="300" src="/assets/img/earth.png">
+        
+        <table>
+           <tr>
+                <th>Id</th>
+                <td>{{ flight.flightNum }}</td>
+            </tr>
+            <tr>
+                <th>Departure Place</th>
+                <td>{{ flight.deperturePlace }}</td>
+            </tr>
+            <tr>
+                <th>Departure Time</th>
+                <td>{{ flight.departureTime | date:'medium'}}</td>
+            </tr>
+            <tr>
+                <th>Arrival Place</th>
+                <td>{{ flight.arrivalPlace }}</td>
+            </tr>
+            <tr>
+                <th>Arrival Time</th>
+                <td>{{ flight.arrivalTime | date:'medium'}}</td>
+            </tr>
+        </table>  
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+<div>
+    <h1>Plane Type #{{planeType.id}} Information</h1>
+    <button routerLink="/planetypes" >Back</button>
+    <div class="details">
+        <img width="300" src="/assets/img/planetype.jpg">
+        <table>
+            <tr>
+                <th>Id</th>
+                <td>{{ planeType.id }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ planeType.model }}</td>
+            </tr>
+            <tr>
+                <th>Places</th>
+                <td>{{ planeType.places}}</td>
+            </tr>
+            <tr>
+                <th>Carry Capacity</th>
+                <td>{{ planeType.carryCapacity }}</td>
+            </tr>
+        
+        </table>
+    </div>    
+</div>
+

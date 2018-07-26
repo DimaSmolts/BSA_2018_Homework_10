@@ -1,0 +1,31 @@
+<div>
+  <h1>All Pilots:</h1>
+  <button routerLink="/pilots/edit/0">new Pilot</button>  
+  <table cellspacing=0>
+    <thead>
+      <tr>      
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birthday</th>
+        <th>Experience</th>
+        <th colspan="3">Additional functions*</th>      
+      </tr>
+    </thead>
+    <tbody *ngFor="let p of pilots">
+      <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.surname}}</td>
+        <td>{{p.birth | date}}</td>
+        <td>{{p.experience}}</td>
+        <td><button routerLink="/pilots/{{p.id}}">Details</button></td>
+        <td><button routerLink="/pilots/edit/{{p.id}}">Update</button></td>
+        <td><button (click)="DeletePilot(p.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h6>*Press Details to get more info</h6>
+      <h6>*Press Update to edit entity</h6>
+      <h6>*Press Delete to remove entity (be careful, deleting entity can cause cascade deleting of other entities)</h6> 
+</div>

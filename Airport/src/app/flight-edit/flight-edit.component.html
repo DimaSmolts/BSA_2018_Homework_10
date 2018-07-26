@@ -1,0 +1,18 @@
+<h1>Edit</h1>
+<button routerLink="/flights">Back</button>
+<form [formGroup]="FlightForm">
+    <div>
+        <label for="Departure_place">Departure place:</label>
+        <label for="Departure_time">Departure time:</label>
+        <label for="Arrival_place">Arrival place:</label>
+        <label for="Arrival_time">Arrival time:</label>
+    </div>
+    <div>
+        <input id="Departure_place" type="text" formControlName="deperturePlace" required>
+        <input id="Departure_time" type="date" formControlName="departureTime" required>
+        <input id="Arrival_place" type="text" formControlName="arrivalPlace" required>
+        <input id="Arrival_time" type="date" formControlName="arrivalTime" required>
+    </div>  
+</form>
+<button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!FlightForm.valid">Create</button>
+<button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!FlightForm.valid">Update</button>

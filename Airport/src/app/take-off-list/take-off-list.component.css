@@ -1,0 +1,37 @@
+th{
+    border-bottom: 2px solid black;
+}
+
+table {
+    margin: 20px 0;
+}
+
+button{
+    cursor: pointer;
+    background-color: #004881;
+    color: aliceblue;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+    background: rgba(0, 72, 129, 0.90);
+}
+
+button:active {
+    background: rgba(0, 72, 129, 0.85);
+}
+
+th,
+td {
+    font-size: 20px;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid skyblue;
+}
