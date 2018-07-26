@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
 import { FormArray } from '@angular/forms';
+import { Crew } from '../Crew';
 
 @Component({
   selector: 'app-crew-edit',
@@ -46,7 +47,10 @@ export class CrewEditComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     // console.warn(this.planeTypeForm.value);
     const url = 'http://localhost:3111/api/crew';
-    console.log(url);
+    console.log('*****************************');
+    const crew: Crew = this.CrewForm.value;
+    console.log(crew);
+    console.log('*****************************');
     this.http.post(url, this.CrewForm.value)
     .subscribe( (response) => {
       console.log('good');
@@ -65,6 +69,4 @@ export class CrewEditComponent implements OnInit {
       console.log('failed');
     } );
   }
-
-
 }
