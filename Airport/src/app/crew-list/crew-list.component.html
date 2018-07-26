@@ -1,6 +1,6 @@
 <div>
     <h1>All Crews:</h1>
-    <button>new Crew</button>  
+    <button routerLink="/crews/edit/0">new Crew</button>  
     <table cellspacing=0>
       <thead>
         <tr>      
@@ -12,7 +12,7 @@
         <tr>
           <td>Crew {{cr.id}}</td>          
           <td><button routerLink="/crews/{{cr.id}}">Details</button></td>
-          <td><button>Update</button></td>
+          <td><button routerLink="/crews/edit/{{cr.id}}">Update</button></td>
           <td><button (click)="DeleteCrew(cr.id)">Delete</button></td>
         </tr>
       </tbody>
