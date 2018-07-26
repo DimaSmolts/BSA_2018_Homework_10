@@ -1,21 +1,48 @@
 <h1>Edit</h1>
+<button routerLink="/crews">Back</button>
 <form [formGroup]="CrewForm">
+
+  <div>
+    <label for="pilot">Pilot ID</label>
+      <div formArrayName="stewardessIds">
+        <div *ngFor="let s of stewardessIds.controls; let i=index">
+            <label for="stew">Stewardess #{{i+1}} ID</label>
+        </div>
+      </div>
+  </div>
+
+  <div>
+    <input id="pilot" type="number" formControlName="pilotId" required>      
+      <div formArrayName="stewardessIds">
+          <div *ngFor="let s of stewardessIds.controls; let i=index">
+              <input id="stew" type="number" [formControlName]="i" required>
+          </div>          
+      </div>    
+  </div>
+
+
+
+
+
+<!--
   <div>
       <label for="Departure_place">Pilot ID</label>
       <input id="Departure_place" type="number" formControlName="pilotId" required>
   </div>
-  <div formArrayName="stewardessIds">
-    
+  <div formArrayName="stewardessIds">    
     <div *ngFor="let s of stewardessIds.controls; let i=index">
       <label for="Departure_time">Stewardess #{{i+1}} ID</label>
       <input id="Departure_place" type="number" [formControlName]="i" required>
     </div>
     <button (click)="addStew()">Add Stew</button>
     <button (click)="deleteStew()">Delete Stew</button>
-  </div>
+  </div>-->
+  </form>
+  <button (click)="addStew()">Add Stew</button>
+  <button (click)="deleteStew()">Delete Stew</button>
   
   <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!CrewForm.valid">Create</button>
   <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!CrewForm.valid">Update</button>
-</form>
+
 
 <p> Here: {{CrewForm.value | json}} </p>
