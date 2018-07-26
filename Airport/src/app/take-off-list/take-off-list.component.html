@@ -1,6 +1,6 @@
 <div>
     <h1>All Take-Offs:</h1>
-    <button>new Take-Off</button>  
+    <button routerLink="/takeoffs/edit/0">new Take-Off</button>  
     <table cellspacing=0>
       <thead>
         <tr>      
@@ -18,7 +18,7 @@
           <td>{{to.flightNum.arrivalPlace}}</td>
           <td>{{to.date | date}}</td>
           <td><button routerLink="/takeoffs/{{to.id}}">Details</button></td>
-          <td><button>Update</button></td>
+          <td><button routerLink="/takeoffs/edit/{{to.id}}">Update</button></td>
           <td><button (click)="DeleteTakeOff(to.id)">Delete</button></td>
         </tr>
       </tbody>

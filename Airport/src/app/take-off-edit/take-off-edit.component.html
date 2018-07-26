@@ -1,0 +1,23 @@
+<h1>Edit</h1>
+<form [formGroup]="TakeOffForm">
+  <div>
+      <label for="Departure_place">Flight ID</label>
+      <input id="Departure_place" type="number" formControlName="flightNum" required>
+  </div>
+  <div>
+      <label for="Departure_time">Crew ID</label>
+      <input id="Departure_place" type="number" formControlName="crewId" required>      
+  </div>
+  <div>
+      <label for="Arrival_place">Plane ID</label>
+      <input id="Arrival_place" type="number" formControlName="planeId" required>
+  </div>
+  <div>
+      <label for="Arrival_place">Date</label>
+      <input id="Arrival_place" type="date | date:'medium'" formControlName="date" required>
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!TakeOffForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!TakeOffForm.valid">Update</button>
+</form>
+
+<p> Here: {{TakeOffForm.value | json}} </p>

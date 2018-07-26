@@ -27,6 +27,7 @@ import { PilotEditComponent } from './pilot-edit/pilot-edit.component';
 import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.component';
 import { PlaneEditComponent } from './plane-edit/plane-edit.component';
 import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
+import { TakeOffEditComponent } from './take-off-edit/take-off-edit.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
     PilotEditComponent,
     StewardessEditComponent,
     PlaneEditComponent,
-    TicketEditComponent
+    TicketEditComponent,
+    TakeOffEditComponent
   ],
   imports: [
     BrowserModule,
