@@ -20,6 +20,9 @@ import { TakeOffListComponent } from './take-off-list/take-off-list.component';
 import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.component';
 import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewEntityComponent } from './crew-entity/crew-entity.component';
+import { PlaneTypeEditComponent } from './plane-type-edit/plane-type-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 
 @NgModule({
@@ -40,12 +43,15 @@ import { CrewEntityComponent } from './crew-entity/crew-entity.component';
     TakeOffListComponent,
     TakeOffEntityComponent,
     CrewListComponent,
-    CrewEntityComponent
+    CrewEntityComponent,
+    PlaneTypeEditComponent,
+    FlightEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

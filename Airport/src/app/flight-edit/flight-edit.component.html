@@ -1,0 +1,23 @@
+<h1>Edit</h1>
+<form [formGroup]="FlightForm">
+  <div>
+      <label for="Departure_place">Departure_place</label>
+      <input id="Departure_place" type="text" formControlName="deperturePlace" required>
+  </div>
+  <div>
+      <label for="Departure_time">Departure_Time</label>
+      <input id="Departure_place" type="date" formControlName="departureTime" required>      
+  </div>
+  <div>
+      <label for="Arrival_place">Arrival_place</label>
+      <input id="Arrival_place" type="text" formControlName="arrivalPlace" required>
+  </div>
+  <div>
+      <label for="Arrival_time">Arrival_Time</label>
+      <input id="Arrival_place" type="date" formControlName="arrivalTime" required>      
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!FlightForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!FlightForm.valid">Update</button>
+</form>
+
+<p> Here: {{FlightForm.value | json}} </p>

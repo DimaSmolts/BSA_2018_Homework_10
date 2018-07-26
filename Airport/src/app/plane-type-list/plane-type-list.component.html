@@ -1,6 +1,6 @@
 <div>
   <h1>All Plane types:</h1>
-  <button>new Plane Type</button>  
+  <button routerLink="/planetypes/edit/0">new Plane Type</button>  
   <table cellspacing=0>
     <thead>
       <tr>      
@@ -18,7 +18,7 @@
         <td>{{pt.places}}</td>
         <td>{{pt.carryCapacity}}</td>
         <td><button routerLink="/planetypes/{{pt.id}}">Details</button></td>
-        <td><button>Update</button></td>
+        <td><button routerLink="/planetypes/edit/{{pt.id}}">Update</button></td>
         <td><button (click)="DeletePT(pt.id)">Delete</button></td>
       </tr>
     </tbody>

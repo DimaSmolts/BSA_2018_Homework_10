@@ -1,0 +1,19 @@
+<h1>Edit</h1>
+<form [formGroup]="planeTypeForm">
+  <div>
+      <label for="Departure_place">Model</label>
+      <input id="Departure_place" type="text" formControlName="model" required>
+  </div>
+  <div>
+      <label for="Departure_time">Places</label>
+      <input id="Departure_place" type="number" formControlName="places" required>      
+  </div>
+  <div>
+      <label for="Arrival_place">Carry Capacity</label>
+      <input id="Arrival_place" type="number" formControlName="carryCapacity" required>
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!planeTypeForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!planeTypeForm.valid">Update</button>
+</form>
+
+<p> Here: {{planeTypeForm.value | json}} </p>

@@ -16,12 +16,16 @@ import { TakeOffListComponent } from './take-off-list/take-off-list.component';
 import { TakeOffEntityComponent } from './take-off-entity/take-off-entity.component';
 import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewEntityComponent } from './crew-entity/crew-entity.component';
+import { PlaneTypeEditComponent } from './plane-type-edit/plane-type-edit.component';
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 
 const routes: Routes = [
   {path: 'flights', component: FlightListComponent},
+  {path: 'flights/edit/:id', component: FlightEditComponent},
   {path: 'flights/:id', component: FlightEntityComponent},
   {path: 'planetypes', component: PlaneTypeListComponent},
+  {path: 'planetypes/edit/:id', component: PlaneTypeEditComponent},
   {path: 'planetypes/:id', component: PlaneTypeEntityComponent},
   {path: 'pilots', component: PilotListComponent},
   {path: 'pilots/:id', component: PilotEntityComponent},
