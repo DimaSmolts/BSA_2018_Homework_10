@@ -1,6 +1,6 @@
 <div>
   <h1>All Planes:</h1>
-  <button>new Plane</button>  
+  <button routerLink="/planes/edit/0">new Plane</button>  
   <table cellspacing=0>
     <thead>
       <tr>      
@@ -20,7 +20,7 @@
         <td>{{p.exploitation}}</td>
         <td>{{p.type.model}}</td>
         <td><button routerLink="/planes/{{p.id}}">Details</button></td>
-        <td><button>Update</button></td>
+        <td><button routerLink="/planes/edit/{{p.id}}">Update</button></td>
         <td><button (click)="DeletePlane(p.id)">Delete</button></td>
       </tr>
     </tbody>

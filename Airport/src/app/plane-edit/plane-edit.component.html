@@ -1,0 +1,23 @@
+<h1>Edit</h1>
+<form [formGroup]="PlaneForm">
+  <div>
+      <label for="Departure_place">Name</label>
+      <input id="Departure_place" type="text" formControlName="name" required>
+  </div>
+  <div>
+      <label for="Departure_time">Made</label>
+      <input id="Departure_place" type="date" formControlName="made" required>      
+  </div>
+  <div>
+      <label for="Arrival_place">Exploitation</label>
+      <input id="Arrival_place" type="text" formControlName="exploitation" required>
+  </div>
+  <div>
+      <label for="Arrival_time">Type Id</label>
+      <input id="Arrival_place" type="number" formControlName="type" required>      
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!PlaneForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!PlaneForm.valid">Update</button>
+</form>
+
+<p> Here: {{PlaneForm.value | json}} </p>

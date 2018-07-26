@@ -1,0 +1,15 @@
+<h1>Edit</h1>
+<form [formGroup]="TicketForm">
+  <div>
+      <label for="Departure_place">price</label>
+      <input id="Departure_place" type="number" formControlName="price" required>
+  </div>
+  <div>
+      <label for="Departure_time">Flight Number</label>
+      <input id="Departure_place" type="number" formControlName="flightNum" required>      
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!TicketForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!TicketForm.valid">Update</button>
+</form>
+
+<p> Here: {{TicketForm.value | json}} </p>

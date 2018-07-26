@@ -25,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { PilotEditComponent } from './pilot-edit/pilot-edit.component';
 import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.component';
+import { PlaneEditComponent } from './plane-edit/plane-edit.component';
+import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.compo
     PlaneTypeEditComponent,
     FlightEditComponent,
     PilotEditComponent,
-    StewardessEditComponent
+    StewardessEditComponent,
+    PlaneEditComponent,
+    TicketEditComponent
   ],
   imports: [
     BrowserModule,

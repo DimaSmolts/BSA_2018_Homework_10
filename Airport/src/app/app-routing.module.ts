@@ -20,6 +20,8 @@ import { PlaneTypeEditComponent } from './plane-type-edit/plane-type-edit.compon
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { PilotEditComponent } from './pilot-edit/pilot-edit.component';
 import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.component';
+import { PlaneEditComponent } from './plane-edit/plane-edit.component';
+import { TicketEditComponent } from './ticket-edit/ticket-edit.component';
 
 
 const routes: Routes = [
@@ -36,8 +38,10 @@ const routes: Routes = [
   {path: 'stewardesses/edit/:id', component: StewardessEditComponent},
   {path: 'stewardesses/:id', component: StewardessEntityComponent},
   {path: 'planes', component: PlaneListComponent},
+  {path: 'planes/edit/:id', component: PlaneEditComponent},
   {path: 'planes/:id', component: PlaneEntityComponent},
   {path: 'tickets', component: TicketListComponent},
+  {path: 'tickets/edit/:id', component: TicketEditComponent},
   {path: 'tickets/:id', component: TicketEntityComponent},
   {path: 'takeoffs', component: TakeOffListComponent},
   {path: 'takeoffs/:id', component: TakeOffEntityComponent},
