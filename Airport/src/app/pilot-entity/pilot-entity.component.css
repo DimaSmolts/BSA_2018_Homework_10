@@ -4,6 +4,16 @@ button {
     border-radius: 10px;
     background-color: #004881;
     color: aliceblue;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+    background: rgba(0, 72, 129, 0.90);
+}
+
+button:active {
+    background: rgba(0, 72, 129, 0.85);
 }
 
 table {

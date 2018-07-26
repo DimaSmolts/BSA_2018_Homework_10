@@ -15,6 +15,15 @@ button{
     border-radius: 10px;
 }
 
+button:hover {
+    text-decoration: underline;
+    background: rgba(0, 72, 129, 0.90);
+}
+
+button:active {
+    background: rgba(0, 72, 129, 0.85);
+}
+
 th,
 td {
     font-size: 20px;
