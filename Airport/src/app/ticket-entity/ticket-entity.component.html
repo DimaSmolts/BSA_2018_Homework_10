@@ -1,15 +1,33 @@
 <div>
-  <h3>Ticket #{{ticket.id}} Information</h3>
+  <h1>Ticket #{{ticket.id}} Information</h1>
   <button routerLink="/tickets" >Back</button>
-    <p>
-        {{ ticket.id }} // 
-        {{ ticket.price }} // 
-    </p>
-    <p style="margin-left: 40px">
-      {{ticket.flightNum.flightNum}} // 
-      {{ticket.flightNum.deperturePlace}} // 
-      {{ticket.flightNum.departureTime}} // 
-      {{ticket.flightNum.arrivalPlace}} // 
-      {{ticket.flightNum.arrivalTime}} // 
-    </p>
+  <div class="details">
+    <img src="/assets/img/Tickets.png" >
+    <table>
+      <tr>
+        <th>ID</th>
+        <td>{{ ticket.id }}</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>{{ ticket.price }}</td>
+      </tr>
+      <tr>
+        <th>Departure</th>
+        <td>{{ticket.flightNum.deperturePlace}}</td>
+      </tr>
+      <tr>
+        <th>Departure Time</th>
+        <td>{{ticket.flightNum.departureTime | date}}</td>
+      </tr>
+      <tr>
+        <th>Arrival</th>
+        <td>{{ticket.flightNum.arrivalPlace}}</td>
+      </tr>
+       <tr>
+        <th>Arrival Time</th>
+        <td>{{ticket.flightNum.arrivalTime | date}}</td>
+      </tr>
+    </table>
+  </div>    
 </div>

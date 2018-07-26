@@ -1,17 +1,31 @@
 <div>
-  <h3>Plane #{{plane.id}} Information</h3>
+  <h1>Plane #{{plane.id}} Information</h1>
   <button routerLink="/planes" >Back</button>
-    <p>
-        {{ plane.id }} // 
-        {{ plane.name }} // 
-        {{ plane.made | date:'medium'}} // 
-        {{ plane.exploitation }}        
-    </p>
-    <p style="margin-left: 40px">Type:</p>
-    <p style="margin-left: 40px">
-      {{plane.type.id}} // 
-      {{plane.type.model}} // 
-      {{plane.type.places}} // 
-      {{plane.type.carryCapacity}}
-    </p>
+
+  <div class="details">
+      <img width="300" src="/assets/img/pl.png">
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <td>{{ plane.id }}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{ plane.name }}</td>
+        </tr>
+        <tr>
+          <th>Made</th>
+          <td>{{ plane.made | date }}</td>
+        </tr>
+        <tr>
+          <th>Exploitation</th>
+          <td>{{ plane.exploitation }}</td>
+        </tr>
+        <tr>
+          <th>Type</th>
+          <td><a routerLink="/planetypes/{{plane.type.id}}">{{plane.type.model}}</a></td>
+        </tr>
+      </table>      
+    </div>
 </div>
