@@ -1,6 +1,6 @@
 <div>
   <h1>All Pilots:</h1>
-  <button>new Pilot</button>  
+  <button routerLink="/pilots/edit/0">new Pilot</button>  
   <table cellspacing=0>
     <thead>
       <tr>      
@@ -20,7 +20,7 @@
         <td>{{p.birth | date}}</td>
         <td>{{p.experience}}</td>
         <td><button routerLink="/pilots/{{p.id}}">Details</button></td>
-        <td><button>Update</button></td>
+        <td><button routerLink="/pilots/edit/{{p.id}}">Update</button></td>
         <td><button (click)="DeletePilot(p.id)">Delete</button></td>
       </tr>
     </tbody>

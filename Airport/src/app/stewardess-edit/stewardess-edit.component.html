@@ -1,0 +1,19 @@
+<h1>Edit</h1>
+<form [formGroup]="StewardessForm">
+  <div>
+      <label for="Departure_place">Name</label>
+      <input id="Departure_place" type="text" formControlName="name" required>
+  </div>
+  <div>
+      <label for="Departure_time">Surname</label>
+      <input id="Departure_place" type="text" formControlName="surname" required>      
+  </div>
+  <div>
+      <label for="Arrival_place">Birth</label>
+      <input id="Arrival_place" type="date" formControlName="birth" required>
+  </div>
+  <button *ngIf="create" (click)="onCreate()" type="submit" [disabled]="!StewardessForm.valid">Create</button>
+  <button *ngIf="!create" (click)="onUpdate()" type="submit" [disabled]="!StewardessForm.valid">Update</button>
+</form>
+
+<p> Here: {{StewardessForm.value | json}} </p>

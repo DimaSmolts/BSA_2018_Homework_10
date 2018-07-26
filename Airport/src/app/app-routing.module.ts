@@ -18,6 +18,8 @@ import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewEntityComponent } from './crew-entity/crew-entity.component';
 import { PlaneTypeEditComponent } from './plane-type-edit/plane-type-edit.component';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
+import { PilotEditComponent } from './pilot-edit/pilot-edit.component';
+import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.component';
 
 
 const routes: Routes = [
@@ -28,8 +30,10 @@ const routes: Routes = [
   {path: 'planetypes/edit/:id', component: PlaneTypeEditComponent},
   {path: 'planetypes/:id', component: PlaneTypeEntityComponent},
   {path: 'pilots', component: PilotListComponent},
+  {path: 'pilots/edit/:id', component: PilotEditComponent},
   {path: 'pilots/:id', component: PilotEntityComponent},
   {path: 'stewardesses', component: StewardessListComponent},
+  {path: 'stewardesses/edit/:id', component: StewardessEditComponent},
   {path: 'stewardesses/:id', component: StewardessEntityComponent},
   {path: 'planes', component: PlaneListComponent},
   {path: 'planes/:id', component: PlaneEntityComponent},

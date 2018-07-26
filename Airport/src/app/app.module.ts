@@ -23,6 +23,8 @@ import { CrewEntityComponent } from './crew-entity/crew-entity.component';
 import { PlaneTypeEditComponent } from './plane-type-edit/plane-type-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
+import { PilotEditComponent } from './pilot-edit/pilot-edit.component';
+import { StewardessEditComponent } from './stewardess-edit/stewardess-edit.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
     CrewListComponent,
     CrewEntityComponent,
     PlaneTypeEditComponent,
-    FlightEditComponent
+    FlightEditComponent,
+    PilotEditComponent,
+    StewardessEditComponent
   ],
   imports: [
     BrowserModule,
