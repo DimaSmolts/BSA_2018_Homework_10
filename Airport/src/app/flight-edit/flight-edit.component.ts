@@ -3,6 +3,7 @@ import { FormControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
+import {FlightService} from '../flight.service';
 
 @Component({
   selector: 'app-flight-edit',
@@ -21,7 +22,7 @@ export class FlightEditComponent implements OnInit {
   public create: boolean;
 
   constructor(private http: Http, private fb: FormBuilder, public route: ActivatedRoute,
-    private location: Location) {
+    private location: Location, private service: FlightService) {
       if ( route.snapshot.paramMap.get('id') === '0' ) {
         this.create = true;
       } else {
@@ -33,27 +34,10 @@ export class FlightEditComponent implements OnInit {
   }
 
   onCreate() {
-    // TODO: Use EventEmitter with form value
-    // console.warn(this.planeTypeForm.value);
-    const url = 'http://localhost:3111/api/flight';
-    console.log(url);
-    this.http.post(url, this.FlightForm.value)
-    .subscribe( (response) => {
-      console.log('good');
-    }, (response) => {
-      console.log('failed');
-    } );
-  }
-  onUpdate() {
-    // TODO: Use EventEmitter with form value
-    const url = 'http://localhost:3111/api/flight/' + this.route.snapshot.paramMap.get('id');
-    console.log(url);
-    this.http.put(url, this.FlightForm.value)
-    .subscribe( (response) => {
-      console.log('good');
-    }, (response) => {
-      console.log('failed');
-    } );
+    this.service.CreateFlight(this.FlightForm.value);
   }
 
+  onUpdate() {
+    this.service.UpdateFlight(this.route.snapshot.paramMap.get('id'), this.FlightForm.value);
+  }
 }

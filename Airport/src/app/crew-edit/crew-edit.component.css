@@ -31,6 +31,7 @@ button {
     background-color: #004881;
     color: aliceblue;
     cursor: pointer;
+    margin: 5px;
 }
 
 button:hover {
@@ -45,6 +46,3 @@ button:active {
 button:disabled{
     background-color: gray;
 }
-
-
-
