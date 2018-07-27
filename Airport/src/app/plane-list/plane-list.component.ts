@@ -3,6 +3,7 @@ import {Http, Response} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {Plane} from '../Plane';
+import {PlaneService} from '../plane.service';
 
 @Component({
   selector: 'app-plane-list',
@@ -13,7 +14,8 @@ export class PlaneListComponent implements OnInit {
 
   planes: Plane[] = [];
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: PlaneService) {
+    /*
     const url = 'http://localhost:3111/api/plane';
     this.planes = [];
     this.http.get(url)
@@ -23,13 +25,16 @@ export class PlaneListComponent implements OnInit {
       console.log(this.planes);
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
   }
 
   ngOnInit() {
+    this.service.getPlanes()
+    .subscribe(data => this.planes = data);
   }
 
   DeletePlane(id: number) {
+    /*
     console.log(id);
     const url = 'http://localhost:3111/api/plane/' + id;
     console.log(url);
@@ -38,7 +43,8 @@ export class PlaneListComponent implements OnInit {
       console.log('in');
     }, (response) => {
       console.log('out');
-    } );
+    } );*/
+    this.service.DeletePlane(id);
   }
 
 }

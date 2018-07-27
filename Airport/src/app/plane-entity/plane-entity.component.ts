@@ -3,6 +3,7 @@ import { Plane } from '../Plane';
 import {Http} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {PlaneService} from '../plane.service';
 
 @Component({
   selector: 'app-plane-entity',
@@ -15,7 +16,9 @@ export class PlaneEntityComponent implements OnInit {
 
   constructor(private http: Http,
     private route: ActivatedRoute,
-    private location: Location) {
+    private location: Location,
+    private service: PlaneService) {
+      /*
     const url = 'http://localhost:3111/api/plane/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.get(url)
@@ -26,10 +29,12 @@ export class PlaneEntityComponent implements OnInit {
       console.log(this.plane);
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
 }
 
   ngOnInit() {
+    this.service.getPlane(this.route.snapshot.paramMap.get('id'))
+    .subscribe(data => this.plane = data);
   }
 
 }
