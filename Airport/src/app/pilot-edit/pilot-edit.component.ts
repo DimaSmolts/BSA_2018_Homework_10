@@ -3,6 +3,7 @@ import { FormControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
+import {PilotService} from '../pilot.service';
 
 @Component({
   selector: 'app-pilot-edit',
@@ -21,7 +22,7 @@ export class PilotEditComponent implements OnInit {
   public create: boolean;
 
   constructor(private http: Http, private fb: FormBuilder, public route: ActivatedRoute,
-    private location: Location) {
+    private location: Location, private service: PilotService) {
       if ( route.snapshot.paramMap.get('id') === '0' ) {
         this.create = true;
       } else {
@@ -35,6 +36,7 @@ export class PilotEditComponent implements OnInit {
   onCreate() {
     // TODO: Use EventEmitter with form value
     // console.warn(this.planeTypeForm.value);
+    /*
     const url = 'http://localhost:3111/api/pilot';
     console.log(url);
     this.http.post(url, this.PilotForm.value)
@@ -42,10 +44,12 @@ export class PilotEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.CreatePilot(this.PilotForm.value);
   }
   onUpdate() {
     // TODO: Use EventEmitter with form value
+    /*
     const url = 'http://localhost:3111/api/pilot/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.put(url, this.PilotForm.value)
@@ -53,7 +57,8 @@ export class PilotEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.UpdatePilot(this.route.snapshot.paramMap.get('id'), this.PilotForm.value);
 }
 
 }

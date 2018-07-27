@@ -3,6 +3,7 @@ import {Http, Response} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Ticket } from '../Ticket';
+import { TicketService } from '../ticket.service';
 
 @Component({
   selector: 'app-ticket-list',
@@ -13,7 +14,8 @@ export class TicketListComponent implements OnInit {
 
   tickets: Ticket[] = [];
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: TicketService) {
+    /*
     const url = 'http://localhost:3111/api/ticket';
     this.tickets = [];
     this.http.get(url)
@@ -23,13 +25,15 @@ export class TicketListComponent implements OnInit {
       console.log(this.tickets);
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
 }
 
   ngOnInit() {
+    this.service.getTickets().subscribe(data => this.tickets = data);
   }
 
   DeleteTicket(id: number) {
+    /*
     console.log(id);
     const url = 'http://localhost:3111/api/ticket/' + id;
     console.log(url);
@@ -38,7 +42,8 @@ export class TicketListComponent implements OnInit {
       console.log('in');
     }, (response) => {
       console.log('out');
-    } );
+    } );*/
+    this.service.DeleteTicket(id);
 }
 
 }

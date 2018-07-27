@@ -3,6 +3,7 @@ import { FormControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
+import { TicketService } from '../ticket.service';
 
 @Component({
   selector: 'app-ticket-edit',
@@ -19,7 +20,7 @@ export class TicketEditComponent implements OnInit {
   public create: boolean;
 
   constructor(private http: Http, private fb: FormBuilder, public route: ActivatedRoute,
-    private location: Location) {
+    private location: Location, private service: TicketService) {
       if ( route.snapshot.paramMap.get('id') === '0' ) {
         this.create = true;
       } else {
@@ -33,6 +34,7 @@ export class TicketEditComponent implements OnInit {
   onCreate() {
     // TODO: Use EventEmitter with form value
     // console.warn(this.planeTypeForm.value);
+    /*
     const url = 'http://localhost:3111/api/ticket';
     console.log(url);
     this.http.post(url, this.TicketForm.value)
@@ -40,10 +42,12 @@ export class TicketEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.CreateTicket(this.TicketForm.value);
   }
   onUpdate() {
     // TODO: Use EventEmitter with form value
+    /*
     const url = 'http://localhost:3111/api/ticket/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.put(url, this.TicketForm.value)
@@ -51,7 +55,8 @@ export class TicketEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.UpdateTicket(this.route.snapshot.paramMap.get('id'), this.TicketForm.value);
   }
 
 }

@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Http } from '@angular/http';
 import { FormArray } from '@angular/forms';
 import { Crew } from '../Crew';
+import {CrewService} from '../crew.service';
 
 @Component({
   selector: 'app-crew-edit',
@@ -32,7 +33,7 @@ export class CrewEditComponent implements OnInit {
   }
 
   constructor(private http: Http, private fb: FormBuilder, public route: ActivatedRoute,
-    private location: Location) {
+    private location: Location, private service: CrewService) {
       if ( route.snapshot.paramMap.get('id') === '0' ) {
         this.create = true;
       } else {
@@ -46,6 +47,7 @@ export class CrewEditComponent implements OnInit {
   onCreate() {
     // TODO: Use EventEmitter with form value
     // console.warn(this.planeTypeForm.value);
+    /*
     const url = 'http://localhost:3111/api/crew';
     console.log('*****************************');
     const crew: Crew = this.CrewForm.value;
@@ -56,10 +58,12 @@ export class CrewEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.CreateCrew(this.CrewForm.value);
   }
   onUpdate() {
     // TODO: Use EventEmitter with form value
+    /*
     const url = 'http://localhost:3111/api/crew/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.put(url, this.CrewForm.value)
@@ -67,6 +71,7 @@ export class CrewEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.UpdateCrew(this.route.snapshot.paramMap.get('id'), this.CrewForm.value);
   }
 }

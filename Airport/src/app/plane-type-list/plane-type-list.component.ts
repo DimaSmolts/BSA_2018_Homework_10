@@ -3,6 +3,7 @@ import { PlaneType } from '../PlaneType';
 import {Http, Response} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { PlanetypeService } from '../planetype.service';
 
 @Component({
   selector: 'app-plane-type-list',
@@ -13,7 +14,8 @@ export class PlaneTypeListComponent implements OnInit {
 
   planeTypes: PlaneType[] = [ ];
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: PlanetypeService) {
+    /*
     const url = 'http://localhost:3111/api/planetype';
     this.planeTypes = [];
     this.http.get(url)
@@ -23,13 +25,16 @@ export class PlaneTypeListComponent implements OnInit {
       console.log(this.planeTypes);
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
 }
 
   ngOnInit() {
+    this.service.getPlaneTypes()
+    .subscribe(data => this.planeTypes = data);
   }
 
   DeletePT(id: number) {
+    /*
     console.log(id);
     const url = 'http://localhost:3111/api/planetype/' + id;
     console.log(url);
@@ -38,7 +43,9 @@ export class PlaneTypeListComponent implements OnInit {
       console.log('in');
     }, (response) => {
       console.log('out');
-    } );
+    } );*/
+    this.service.DeletelaneType(id);
+
   }
 
 }

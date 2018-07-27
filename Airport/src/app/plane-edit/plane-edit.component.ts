@@ -3,6 +3,7 @@ import { FormControl, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
+import {PlaneService} from '../plane.service';
 
 @Component({
   selector: 'app-plane-edit',
@@ -21,7 +22,7 @@ export class PlaneEditComponent implements OnInit {
   public create: boolean;
 
   constructor(private http: Http, private fb: FormBuilder, public route: ActivatedRoute,
-    private location: Location) {
+    private location: Location, private service: PlaneService) {
       if ( route.snapshot.paramMap.get('id') === '0' ) {
         this.create = true;
       } else {
@@ -35,6 +36,7 @@ export class PlaneEditComponent implements OnInit {
   onCreate() {
     // TODO: Use EventEmitter with form value
     // console.warn(this.planeTypeForm.value);
+    /*
     const url = 'http://localhost:3111/api/plane';
     console.log(url);
     this.http.post(url, this.PlaneForm.value)
@@ -42,10 +44,12 @@ export class PlaneEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.CreatePlane(this.PlaneForm.value);
   }
   onUpdate() {
     // TODO: Use EventEmitter with form value
+    /*
     const url = 'http://localhost:3111/api/plane/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.put(url, this.PlaneForm.value)
@@ -53,7 +57,8 @@ export class PlaneEditComponent implements OnInit {
       console.log('good');
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
+    this.service.UpdatePlane(this.route.snapshot.paramMap.get('id'), this.PlaneForm.value);
   }
 
 }
