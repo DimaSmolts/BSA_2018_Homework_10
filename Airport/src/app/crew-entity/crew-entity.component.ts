@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {CrewService} from '../crew.service';
 import { Crew } from '../Crew';
 
 @Component({
@@ -15,7 +16,9 @@ export class CrewEntityComponent implements OnInit {
 
   constructor(private http: Http,
     private route: ActivatedRoute,
-    private location: Location) {
+    private location: Location,
+    private service: CrewService) {
+      /*
     const url = 'http://localhost:3111/api/crew/' + this.route.snapshot.paramMap.get('id');
     console.log(url);
     this.http.get(url)
@@ -26,10 +29,11 @@ export class CrewEntityComponent implements OnInit {
       console.log(this.crew);
     }, (response) => {
       console.log('failed');
-    } );
+    } );*/
 }
 
   ngOnInit() {
+    this.service.getCrew(this.route.snapshot.paramMap.get('id')).subscribe(data => this.crew = data);
   }
 
 }
